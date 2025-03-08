@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Access Simulation</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+        body {
+            background-color: #000;
+            color: #ff5c57;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            flex-direction: column;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .banner {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ff0000;
+            color: #fff;
+            font-size: 1.5rem;
+            padding: 10px 0;
+            display: none;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .warning {
+            font-size: 3rem;
+            font-family: 'Creepster', monospace;
+            animation: glitch 0.3s infinite alternate;
+            text-shadow: 5px 5px 15px #ff0000, -5px -5px 15px #8b0000;
+        }
+
+        @keyframes glitch {
+            0% { transform: translateX(0) translateY(0); }
+            20% { transform: translateX(-8px) translateY(-8px); }
+            40% { transform: translateX(8px) translateY(8px); }
+            60% { transform: translateX(-8px) translateY(8px); }
+            80% { transform: translateX(8px) translateY(-8px); }
+            100% { transform: translateX(0) translateY(0); }
+        }
+
+        .progress-bar {
+            width: 80%;
+            background-color: #333;
+            height: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .progress-bar div {
+            width: 0;
+            height: 100%;
+            background-color: #ff0000;
+            animation: progress 5s forwards;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        .success {
+            display: none;
+            font-size: 2rem;
+            color: #32cd32;
+            font-weight: bold;
+            margin-top: 20px;
+            text-shadow: 2px 2px 8px #228b22;
+        }
+
+        .nameid {
+            display: none;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 1rem;
+            color: #ff0000;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .button, .fb-button {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            font-family: "Ubuntu", sans-serif;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            display: none;
+            border-radius: 25px;
+        }
+
+        .fb-button {
+            background-color: #3b5998;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner" id="data-banner">Accessing your data...</div>
+    <p class="warning" id="warning">I warned you before</p>
+    <p class="success" id="success">Data has been successfully accessed!</p>
+    <button class="button" id="joke-button" onclick="joke()">I'm just kidding with you 😂</button>
+    <p class="nameid" id="nameid">Name : Ahmed Salman , Student ID : 933240005</p>
+    <div class="progress-bar" id="progress-bar">
+        <div></div>
+    </div>
+    
+    
+
+
+    <script>
+        
+        setTimeout(() => {
+            document.getElementById('warning').style.display = 'block';
+        }, 1000);
+
+        setTimeout(() => {
+            document.getElementById('data-banner').style.display = 'block';
+        }, 3000);
+
+        setTimeout(() => {
+            document.getElementById('progress-bar').style.display = 'block';
+        }, 5000);
+
+        setTimeout(() => {
+            document.getElementById('progress-bar').style.display = 'none';
+            document.getElementById('success').style.display = 'block';
+            document.getElementById('data-banner').style.display = 'none';
+        }, 10000);
+
+        setTimeout(() => {
+            document.getElementById('joke-button').style.display = 'block';
+            document.getElementById('nameid').style.display = 'block';
+        }, 11000);
+
+        function joke() {
+            alert("I'm just kidding with you! Stay safe online.👌❤️");
+        }
+    </script>
+</body>
+</html>
