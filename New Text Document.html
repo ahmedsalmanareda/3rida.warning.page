@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOU HAVE BEEN HACKED</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+        body {
+            background-color: #000;
+            color: #ff4c4c;
+            font-family: 'Creepster', cursive;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .warning {
+            font-size: 4rem;
+            animation: glitch 0.3s infinite alternate;
+            text-shadow: 5px 5px 15px #ff0000, -5px -5px 15px #8b0000;
+        }
+        @keyframes glitch {
+            0% { transform: translateX(0) translateY(0); }
+            20% { transform: translateX(-8px) translateY(-8px); }
+            40% { transform: translateX(8px) translateY(8px); }
+            60% { transform: translateX(-8px) translateY(8px); }
+            80% { transform: translateX(8px) translateY(-8px); }
+            100% { transform: translateX(0) translateY(0); }
+        }
+        .emoji {
+            font-size: 5rem;
+            text-shadow: 3px 3px 15px #8b0000;
+        }
+        .static {
+            background: url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif') center/cover no-repeat;
+            opacity: 0.1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        p {
+            text-shadow: 2px 2px 8px #8b0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="static"></div>
+    <div>
+        <p class="warning">YOU HAVE BEEN HACKED</p>
+        <p style="font-size: 1.8rem;">DO NOT click on any unfamiliar links</p>
+        <p class="emoji">😈💀👀</p>
+        <p style="font-size: 1.5rem;">Be careful next time...</p>
+    </div>
+    <audio autoplay loop>
+        <source src="https://www.soundjay.com/horror/horror-sound-1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
