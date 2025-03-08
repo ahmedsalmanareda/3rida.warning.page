@@ -18,6 +18,7 @@
             height: 100vh;
             margin: 0;
             overflow: hidden;
+            position: relative;
         }
         .warning {
             font-size: 4rem;
@@ -49,6 +50,17 @@
         p {
             text-shadow: 2px 2px 8px #8b0000;
         }
+        .fake-link {
+            color: #00ff00;
+            text-decoration: underline;
+            cursor: pointer;
+            animation: flicker 1s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -58,10 +70,13 @@
         <p style="font-size: 1.8rem;">DO NOT click on any unfamiliar links</p>
         <p class="emoji">😈💀👀</p>
         <p style="font-size: 1.5rem;">Be careful next time...</p>
+        <p class="fake-link" onclick="scare()">Click here for safety instructions</p>
     </div>
-    <audio autoplay loop>
-        <source src="https://www.soundjay.com/horror/horror-sound-1.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
+
+    <script>
+        function scare() {
+            window.open('scary.html', '_blank');
+        }
+    </script>
 </body>
 </html>
